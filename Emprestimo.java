@@ -1,45 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package model;
 
-import java.util.Date;
-
-public class Emprestimo {
-    private Ferramenta ferramenta;
-    private String nomeAmigo;
-    private long dataEmprestimo;
-    private long dataDevolucao; // Usamos Long para poder representar a ausência de data com null
-
-    public Emprestimo(Ferramenta ferramenta, String nomeAmigo, long dataEmprestimo) {
-        this.ferramenta = ferramenta;
-        this.nomeAmigo = nomeAmigo;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
+/**
+ *
+ * @author mariahaeming
+ */
+public class Emprestimo extends visao.FrmRegistrarEmprestimo {
+    private int id_emprestimo;
+    private int dataE;
+    
+      public Emprestimo() {
+        this(0, 0);
     }
 
-    public Ferramenta getFerramenta() {
-        return ferramenta;
+    public Emprestimo(int id_emprestimo, int dataE) {
+        this.id_emprestimo = id_emprestimo;
+        this.dataE = dataE;
     }
 
-    public String getNomeAmigo() {
-        return nomeAmigo;
+    public int getId_emprestimo() {
+        return id_emprestimo;
     }
 
-    public long getDataEmprestimo() {
-        return dataEmprestimo;
+    public void setId_emprestimo(int id_emprestimo) {
+        this.id_emprestimo = id_emprestimo;
     }
 
-    public long getDataDevolucao() {
-        return dataDevolucao;
+    public int getDataE() {
+        return dataE;
     }
 
-    public void setDataDevolucao(long dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
+    public void setDataE(int dataE) {
+        this.dataE = dataE;
     }
-
-    @Override
-    public String toString() {
-        return "Ferramenta: " + ferramenta.getNome() + ", Amigo: " + nomeAmigo + 
-               ", Data de Empréstimo: " + dataEmprestimo + 
-               ", Data de Devolução: " + (dataDevolucao == null + "Não devolvida" : dataDevolucao);
-    }
+    
 }
-
